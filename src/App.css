@@ -1,0 +1,487 @@
+
+ *{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+body{
+background-color: #333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+--hilt-size: em;
+}
+
+
+/* Lightsaber styling */
+
+.lightsaber {
+  margin-top: 50vh;
+  /* margin-left: 45vw; */
+  margin-left: 35vw;
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.lightsaber2 {
+  margin-top: -10vh;
+  margin-left: 17.5vw;
+  grid-column: 1 / -1;
+  position: relative;
+  transform: rotate(180deg);
+  transform-origin: 20% 40%;
+}
+
+#on-off {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+#on-off2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.hilt {
+  cursor: pointer;
+  display: block;
+  width: 1rem;
+  height: 7rem;
+  margin-left: -2px;
+
+}
+
+input[type="checkbox"]:focus + label::before {
+  outline: none;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+outline: none;
+outline-width: 0;
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+outline-color:transparent;
+outline: none !important;
+
+}
+
+label:focus{
+  outline: none;
+  outline: 0;
+}
+
+.clr-green{
+  box-shadow: 0 0 1em hsl(120 100% 50% / 1),
+  0 0 2em hsl(120 100% 50% / .75),
+  0 0 2.5em hsl(120 100% 50% / .5),
+  0 0 3em hsl(120 100% 50% / .3),
+  0 0 5em hsl(120 100% 50% / .2);
+}
+
+.clr-green::after{
+  background: hsl(120 100% 50%);
+}
+
+.clr-blue{
+  box-shadow: 0 0 1em hsl(190 100% 50% / 1),
+  0 0 2em hsl(190 100% 50% / .75),
+  0 0 2.5em hsl(190 100% 50% / .5),
+  0 0 3em hsl(190 100% 50% / .3),
+  0 0 5em hsl(190 100% 50% / .2);
+}
+
+.clr-blue::after{
+background: hsl(195 100% 50%);
+}
+
+.red-clr{
+box-shadow: 0 0 1em hsl(0 100% 50% / 1),
+0 0 2em hsl(0 100% 50% / .75),
+0 0 2.5em hsl(0 100% 50% / .5),
+0 0 3em hsl(0 100% 50% / .3),
+0 0 5em hsl(0 100% 50% / .2);
+}
+
+.red-clr::after{
+background: hsl(0 100% 50%);
+}
+
+.purple-clr{
+box-shadow: 0 0 1em hsl(290 100% 50% / 1),
+0 0 2em hsl(290 100% 50% / .75),
+0 0 2.5em hsl(290 100% 50% / .5),
+0 0 3em hsl(290 100% 50% / .3),
+0 0 5em hsl(290 100% 50% / .2);
+}
+
+.purple-clr::after{
+background: hsl(290 100% 50%);
+}
+
+.yellow-clr{
+box-shadow: 0 0 1em hsl(60 100% 50% / 1),
+0 0 2em hsl(60 100% 50% / .75),
+0 0 2.5em hsl(60 100% 50% / .5),
+0 0 3em hsl(60 100% 50% / .3),
+0 0 5em hsl(60 100% 50% / .2);
+}
+
+.yellow-clr::after{
+background: hsl(60 100% 50%);
+}
+
+.white-clr{
+box-shadow: 0 0 1em hsl(360 100% 100% / 1),
+0 0 2em hsl(360 100% 100% / .75),
+0 0 2.5em hsl(360 100% 100% / .5),
+0 0 3em hsl(360 100% 100% / .3),
+0 0 5em hsl(360 100% 100% / .2);
+}
+
+.white-clr::after{
+background: hsl(360 100% 100%);
+}
+
+.blade {
+  position: absolute;
+  background: white;
+  height: 250px;
+  width: 12px;
+  bottom: 100%;
+  /* left: 0.55%; */
+  border-radius: 100vw 100vw 0 0;
+  transition: transform 50ms ease-out;
+  transform-origin: bottom;
+}
+
+.blade::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+border-radius: inherit;
+filter: blur(0.5em);
+opacity: 1;
+animation: pulse linear 5s infinite;
+}
+
+.blade::before {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+background: white;
+border-radius: inherit;
+z-index: 10;
+}
+
+.blade2 {
+  position: absolute;
+  background: white;
+  /* top: 52.5%; */
+  top: 184px;
+  left: 0.5px;
+  height: 250px;
+  width: 12px;
+  bottom: 100%;
+  border-radius: 0 0 100vw 100vw;
+  transition: transform 50ms ease-out;
+  transform-origin: top;
+}
+
+.blade2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  filter: blur(0.5em);
+  opacity: 1;
+  animation: pulse linear 5s infinite;
+  }
+  
+  .blade2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  border-radius: inherit;
+  z-index: 10;
+  }
+
+  .blade3 {
+    position: absolute;
+    background: white;
+    /* top: 6%;
+    left: -25px; */
+    top: 20px;
+    left: -27px;
+    height: 60px;
+    width: 12px;
+    bottom: 100%;
+    border-radius: 0 0 100vw 100vw;
+    transition: transform 50ms ease-out;
+    transform-origin: top;
+    transform: rotate(90deg);
+  }
+  
+  .blade3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    filter: blur(0.5em);
+    opacity: 1;
+    animation: pulse linear 5s infinite;
+    }
+    
+    .blade3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: white;
+    border-radius: inherit;
+    z-index: 10;
+    }
+
+      .blade4 {
+    position: absolute;
+    background: white;
+    /* top: 6%; */
+    top: 20px;
+    /* left: 2.8%; */
+    left: 27px;
+    height: 60px;
+    width: 12px;
+    bottom: 100%;
+    border-radius: 0 0 100vw 100vw;
+    transition: transform 50ms ease-out;
+    transform-origin: top;
+    transform: rotate(270deg);
+  }
+  
+  .blade4::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    filter: blur(0.5em);
+    opacity: 1;
+    animation: pulse linear 5s infinite;
+    }
+    
+    .blade4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: white;
+    border-radius: inherit;
+    z-index: 10;
+    }
+
+@keyframes pulse {
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.hilt2{
+cursor: pointer;
+margin-left: -135%;
+width: 60px;
+
+}
+
+/* Turn lightsaber on and off */
+
+#on-off:not(:checked) ~ .blade {
+  transform: scaleY(0);
+}
+
+#on-off:checked ~ .blade {
+  transform: scaleY(1);
+}
+
+
+#on-off:not(:checked) ~ .blade2 {
+  transform: scaleY(0);
+}
+
+#on-off:checked ~ .blade2 {
+  transform: scaleY(1);
+}
+
+#on-off:not(:checked) ~ .blade3 {
+  transform: scale(0);
+}
+
+#on-off:not(:checked) ~ .blade4 {
+  transform: scale(0);
+}
+
+
+.infobox{
+  /* margin-top: 50vh; */
+  margin-left: 35vw;
+  user-select: none;
+  margin-top: -20vw;
+  width: 300px;
+  height: 500px;
+  background-color: #444;
+  border-radius: 25px;
+}
+
+.logo-sizer{
+width: 150px;
+margin-left: 25%;
+margin-top: 20%;
+}
+
+.infotxt{
+color: white;
+/* margin-left: 5%; */
+text-align: center;
+padding: 5%;
+}
+
+.infotxt p{
+padding-bottom: 2%;
+}
+
+.color-txt{
+  margin-top: 36vw;
+  user-select: none;
+  color: white;
+}
+
+button{
+background-color: grey;
+color: black;
+margin: 4px;
+width: 100px;
+height: 35px;
+}
+
+.clrbtn{
+width: 35px;
+height: 35px;
+border-radius: 50%;
+border: none;
+cursor: pointer;
+}
+
+.greenbtn{
+background-color: green;
+}
+
+.green{
+color: green;
+}
+
+.whitebtn{
+background-color: white;
+}
+
+.white{
+color: white;
+}
+
+.yellowbtn{
+background-color: yellow;
+}
+
+.yellow{
+color: yellow;
+}
+
+.purplebtn{
+background-color: purple;
+}
+
+.purple{
+color: purple;
+}
+
+.redbtn{
+background-color: red;
+}
+
+.red{
+color: red;
+}
+
+.bluebtn{
+background-color: blue;
+}
+
+.blue{
+color: rgb(28, 28, 133);
+}
+
+.hiltsbtns{
+grid-area: hiltsbtns;
+}
+
+.btns{
+grid-area: btns;
+margin-left: 10px;
+margin-top: 5px;
+}
+
+.hilts{
+grid-area: hilts;
+}
+
+.info{
+grid-area: info;
+}
+
+.grid{
+display: grid;
+grid-template-columns: 150px 50px 50px;
+grid-template-rows: auto;
+grid-template-areas: 
+  "btns hilts info";
+}
+
+.darthmaul{
+  position: absolute;
+  background: white;
+  top: 252.5% !important;
+  left: 0.1%;
+  height: 250px;
+  width: 12px;
+  bottom: 100%;
+  border-radius: 0 0 100vw 100vw;
+  transition: transform 50ms ease-out;
+  transform-origin: top;
+}
